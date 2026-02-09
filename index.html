@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>The Tea & Soup Wellness Guide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea & Soup AI Wellness</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9fbf9; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2d5a27; }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        textarea, select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: #2d5a27; color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; font-size: 16px; }
+        button:hover { background: #1e3d1a; }
+        #ad-spot { margin-top: 30px; padding: 15px; border: 2px dashed #dbc1ac; background: #fffdf5; text-align: center; }
+        #result-area { display: none; margin-top: 20px; padding: 15px; background: #e8f5e9; border-left: 5px solid #2d5a27; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Tea & Soup AI Guide</h1>
-    <p>AI Symptom Checker coming soon!</p>
-    <div id="ad-space" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px;">
-        <p>Your Sponsor Ad Here</p>
+
+    <div class="card">
+        <h1>🍵 Tea & Soup AI Guide</h1>
+        <p>Enter your symptoms below, and our AI will generate a daily routine for you.</p>
+
+        <form id="symptomForm">
+            <label for="symptoms">What are your current pains or symptoms?</label>
+            <textarea id="symptoms" rows="4" placeholder="e.g. Headache, bloating, low energy..."></textarea>
+
+            <label for="diet">Any dietary restrictions?</label>
+            <select id="diet">
+                <option value="none">None</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten-Free</option>
+            </select>
+
+            <button type="button" onclick="generateRoutine()">Generate My Routine</button>
+        </form>
+
+        <div id="result-area">
+            <h3>Your Personalized Routine:</h3>
+            <p id="routineText"></p>
+        </div>
+
+        <div id="ad-spot">
+            <small>Sponsor</small>
+            <p><strong>Premium Tea Sample Pack - 20% Off!</strong></p>
+            <a href="#">Click here to claim this deal</a>
+        </div>
     </div>
+
+    <script>
+        function generateRoutine() {
+            const symptoms = document.getElementById('symptoms').value;
+            const resultArea = document.getElementById('result-area');
+            const routineText = document.getElementById('routineText');
+
+            if(symptoms.length < 5) {
+                alert("Please describe your symptoms in more detail.");
+                return;
+            }
+
+            // For now, this is a placeholder. 
+            // Next, I can show you how to connect this to a real AI.
+            routineText.innerText = "Analyzing your symptoms: '" + symptoms + "'. Your custom Ginger-Lemon tea and Bone Broth soup routine is being prepared...";
+            resultArea.style.display = "block";
+        }
+    </script>
+
 </body>
 </html>
